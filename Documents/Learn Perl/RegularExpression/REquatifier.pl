@@ -11,8 +11,11 @@ sub main {
     while(my $line = <INPUT>) {
         # =~ is equal and match
         # . - any character at all
-        if ($line =~ / h.s.g/) {
-            print $line;
+        # + - one or more
+        # * - zero or more (greedy), as many as possible
+        # ? - not greedy, as few as possible
+        if ($line =~ /(s.*?n)/) {
+            print "$1\n";
         }
     }
     close(INPUT);
